@@ -1,0 +1,161 @@
+.solutionsContainer {
+  padding: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Réduction de l'espacement entre les sections */
+  background-color: #0a192f; /* Couleur de fond du header */
+}
+
+.introSection {
+  text-align: center;
+  margin-bottom: 1.5rem; /* Réduction de la marge en bas de l'intro */
+}
+
+.solutionsTitle {
+  font-size: 2.2rem; /* Légère réduction de la taille du titre principal */
+  font-weight: bold;
+  margin-bottom: 0.8rem; /* Réduction de la marge sous le titre principal */
+  color: #64ffda;
+}
+
+.solutionsDescription {
+  font-size: 1rem;
+  line-height: 1.5; /* Légère réduction de l'interligne */
+  color: #ccd6f6;
+  max-width: 700px;
+  margin: 0 auto 1.2rem; /* Réduction de la marge en bas de la description */
+}
+
+.solutionSection {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Réduction de l'espacement entre image et texte */
+  padding: 1.5rem; /* Réduction du padding interne */
+  background-color: #112240;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère réduction de l'ombre */
+}
+
+.imageColumn {
+  flex: 0 0 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 70%; /* Légère réduction de la taille de l'image */
+  max-width: 180px; /* Réduction de la taille maximale de l'image */
+  height: auto;
+}
+
+.solutionImage {
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Légère réduction de l'ombre de l'image */
+}
+
+.textColumn {
+  flex: 1;
+}
+
+.sectionTitle {
+  font-size: 1.6rem; /* Légère réduction de la taille du titre de section */
+  font-weight: bold;
+  margin-bottom: 0.6rem; /* Réduction de la marge sous le titre de section */
+  color: #a7f5e2;
+}
+
+.sectionDescription {
+  font-size: 0.9rem; /* Légère réduction de la taille de la description de section */
+  line-height: 1.4; /* Légère réduction de l'interligne */
+  color: #ccd6f6;
+  margin-bottom: 0.8rem; /* Réduction de la marge sous la description de section */
+}
+
+.featureList {
+  list-style-type: disc;
+  padding-left: 1.2rem; /* Réduction du padding à gauche de la liste */
+  color: #8892b0;
+}
+
+.featureList li {
+  margin-bottom: 0.3rem; /* Réduction de la marge entre les éléments de la liste */
+  font-size: 0.9rem; /* Légère réduction de la taille du texte de la liste */
+}
+
+.callToAction {
+  text-align: center;
+  margin-top: 3rem; /* Réduction de la marge en haut de l'appel à l'action */
+}
+
+.callToAction p {
+  font-size: 1.1rem; /* Légère réduction de la taille du texte de l'appel à l'action */
+  color: #ccd6f6;
+  margin-bottom: 1rem; /* Réduction de la marge sous le texte de l'appel à l'action */
+}
+
+.contactButton {
+  background-color: #64ffda;
+  color: #0a192f;
+  padding: 0.8rem 2rem; /* Réduction du padding du bouton */
+  border-radius: 6px;
+  font-size: 1rem; /* Légère réduction de la taille du texte du bouton */
+}
+
+.contactButton:hover {
+  background-color: #a7f5e2;
+  transform: scale(1.03); /* Légère réduction de l'effet de scale au survol */
+}
+
+/* Animation au chargement (inchangée) */
+.solutionsContainer > * {
+  opacity: 0;
+  transform: translateY(15px); /* Légère réduction de la translation initiale */
+  animation: fadeInUp 0.6s ease-out forwards; /* Réduction de la durée de l'animation */
+}
+
+.solutionsContainer > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.solutionsContainer > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.solutionsContainer > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.solutionsContainer > *:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styles pour inverser l'ordre image/texte sur certains écrans (inchangée) */
+@media (max-width: 768px) {
+  .solutionSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imageColumn {
+    margin-bottom: 1rem;
+  }
+
+  .imageWrapper {
+    width: 60%;
+    max-width: 120px;
+    margin: 0 auto;
+  }
+}

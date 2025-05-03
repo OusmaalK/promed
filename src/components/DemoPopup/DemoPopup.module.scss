@@ -1,0 +1,195 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+  }
+  
+  .popup {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    transition: color 0.2s;
+  
+    &:hover {
+      color: #334155;
+    }
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .titleIcon {
+    color: #3b82f6;
+  }
+  
+  .stepContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .dateTimeLabel {
+    color: #1e40af;
+    font-weight: 600;
+  
+    svg {
+      color: #3b82f6;
+    }
+  }
+  
+  .inputIcon {
+    color: #64748b;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .input {
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background-color: #f8fafc;
+    position: relative;
+  
+    &:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+  
+    &::placeholder {
+      color: #94a3b8;
+    }
+  }
+  
+  .dateTimeInput {
+    background-color: #f0f9ff;
+    border-color: #3b82f6 !important;
+    font-weight: 500;
+    color: #1e40af;
+  
+    &::placeholder {
+      color: #93c5fd;
+    }
+  
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3) !important;
+    }
+  }
+  
+  .textarea {
+    @extend .input;
+    min-height: 100px;
+    resize: vertical;
+    padding-left: 1rem;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+  
+  .backButton {
+    padding: 0.75rem 1.5rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #64748b;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  
+    &:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+  }
+  
+  .nextButton, .submitButton {
+    padding: 0.75rem 1.5rem;
+    background: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex: 1;
+  
+    &:hover {
+      background: #2563eb;
+    }
+  
+    &:disabled {
+      background: #cbd5e1;
+      cursor: not-allowed;
+    }
+  }
+  
+  .stepContainer {
+    position: relative;
+    min-height: 300px;
+  }
+  
+  @media (max-width: 640px) {
+    .popup {
+      padding: 1.5rem;
+    }
+  
+    .title {
+      font-size: 1.25rem;
+    }
+  
+    .buttonGroup {
+      flex-direction: column;
+    }
+  }

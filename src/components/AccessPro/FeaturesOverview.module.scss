@@ -1,0 +1,121 @@
+.featuresOverview {
+  position: relative;
+  padding: 2rem;
+  background: white;
+  border-radius: 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  .closeButton {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      color: #334155;
+      transform: scale(1.1);
+    }
+  }
+
+  h2 {
+    color: #1e293b;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+
+  .featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 1rem;
+  }
+
+  .featureCard {
+    padding: 1.75rem;
+    background: #f8fafc;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #e2e8f0;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-color: #cbd5e1;
+    }
+
+    .featureHeader {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+
+      .featureIcon {
+        width: 2.5rem;
+        height: 2.5rem;
+        color: #3b82f6;
+        flex-shrink: 0;
+      }
+
+      h3 {
+        color: #1e40af;
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 500;
+      }
+    }
+
+    p {
+      color: #475569;
+      margin-bottom: 1.75rem;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .featureImageContainer {
+      overflow: hidden;
+      border-radius: 0.5rem;
+      position: relative;
+      padding-top: 56.25%; // Ratio 16:9
+      background: #f1f5f9;
+
+      .featureImage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+
+        &:hover {
+          transform: scale(1.03);
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .featuresOverview {
+    padding: 1.5rem;
+
+    .featuresGrid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .featureCard {
+      padding: 1.25rem;
+    }
+  }
+}

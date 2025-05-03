@@ -1,0 +1,233 @@
+// Mise à jour du fichier Plateforme.module.scss
+
+.cadreIntroduction {
+  background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+  border-top: 1px solid rgba(100, 255, 218, 0.3);
+  border-bottom: 1px solid rgba(100, 255, 218, 0.3);
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+  margin-top: 0;
+}
+
+.titre {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #64ffda 0%, #ccd6f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-out;
+}
+
+.texte {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #ccd6f6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionImageTexte,
+.sectionTexteImage,
+.sectionImageTexteSuivant {
+  display: flex;
+  align-items: stretch;
+  gap: 2rem;
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(10, 25, 47, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.colonneImage {
+  flex: 0 0 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.colonneTexte {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.cadreTexte {
+  padding: 2rem;
+  text-align: left;
+  height: 100%;
+  color: white;
+  width: 100%;
+}
+
+.titreCadreTexte {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #64ffda;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #64ffda 0%, transparent 100%);
+  }
+}
+
+.listePoints,
+.listeComposants,
+.sousListe {
+  list-style-type: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  
+  li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    
+    &::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #64ffda;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+  }
+}
+
+.listeAvantages {
+  .itemAvantage {
+    margin-bottom: 1.5rem;
+    
+    strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #ccd6f6;
+    }
+  }
+  
+  .emoji {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    vertical-align: middle;
+  }
+}
+
+.modernButton {
+  background: linear-gradient(135deg, #64ffda 0%, #26a69a 100%);
+  color: #0a192f;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(100, 255, 218, 0.4);
+  }
+  
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animatedImage {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animatedImageInverse {
+  animation: float 6s ease-in-out infinite reverse;
+}
+
+// Responsive
+@media (max-width: 992px) {
+  .sectionImageTexte,
+  .sectionTexteImage,
+  .sectionImageTexteSuivant {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+  
+  .colonneImage {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  
+  .titre {
+    font-size: 1.8rem;
+  }
+  
+  .titreCadreTexte {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .cadreIntroduction {
+    padding: 2rem 1rem;
+  }
+  
+  .titre {
+    font-size: 1.5rem;
+  }
+  
+  .texte {
+    font-size: 1rem;
+  }
+  
+  .modernButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

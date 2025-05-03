@@ -1,0 +1,61 @@
+.regulationsPanel {
+  position: relative;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: #f8fafc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+
+  .closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #64748b;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #334155;
+    }
+  }
+
+  h2 {
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .complianceInfo {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+
+    .icon {
+      width: 3rem;
+      height: 3rem;
+      flex-shrink: 0;
+      color: #3b82f6;
+    }
+
+    .textContent {
+      p {
+        color: #475569;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        color: #475569;
+
+        li {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
