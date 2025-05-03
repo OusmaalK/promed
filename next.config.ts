@@ -1,24 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    turbo: {
-      rules: {
-        // Pour les SVG
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.jsx'
-        },
-        // Pour les images PNG
-        '*.png': {
-          loaders: ['next-image-loader'],
-          as: '*.js'
-        }
-      }
-    }
+  webpack: (config: { module: { rules: { test: RegExp; use: string[]; }[]; }; }, { isServer }: any) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
   },
-  images: {
-    disableStaticImages: true // Important pour Turbopack
-  }
 };
 
 module.exports = nextConfig;
